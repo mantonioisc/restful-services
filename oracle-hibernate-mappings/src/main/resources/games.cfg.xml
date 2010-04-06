@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+        
+<hibernate-configuration>
+	<session-factory>
+		<!-- Connection properties -->
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.url">${db.url}</property>
+		<property name="hibernate.connection.username">${db.user}</property>
+		<property name="hibernate.connection.password">${db.password}</property>
+		
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		
+		<!-- misc -->
+		<property name="hibernate.connection.pool_size">2</property>
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		
+		<!-- show sql -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		
+		<!--<mapping resource="examples/hibernate/domain/Company.hbm.xml"/>
+		<mapping resource="examples/hibernate/domain/Console.hbm.xml"/>
+		<mapping resource="examples/hibernate/domain/Developer.hbm.xml"/>
+		<mapping resource="examples/hibernate/domain/Game.hbm.xml"/>-->
+		<mapping resource="examples/hibernate/domain/Tag.hbm.xml"/>
+		<mapping resource="examples/hibernate/domain/User.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>

@@ -8,6 +8,12 @@
   <name>A games database using oracle and accessed using hibernate</name>
   <url>http://maven.apache.org</url>
   
+  <properties>
+  	<db.user>HR</db.user>
+  	<db.password>HR</db.password>
+  	<db.url>jdbc:oracle:thin:@localhost:1521:xe</db.url>
+  </properties>
+  
   <dependencies>
     <dependency>
     	<groupId>com.oracle</groupId>
@@ -22,6 +28,12 @@
     </dependency>
     
     <dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>slf4j-simple</artifactId>
+    	<version>1.5.8</version>
+    </dependency>
+    
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.8.1</version>
@@ -30,15 +42,23 @@
   </dependencies>
   
   <build>
+  	<resources>
+  		<resource>
+  			<directory>src/main/resources</directory>
+  			<filtering>true</filtering>
+  		</resource>
+  	</resources>
+  	
     <plugins>
-	<plugin>
-  	    <groupId>org.apache.maven.plugins</groupId>
-  	    <artifactId>maven-compiler-plugin</artifactId>
-  	    <configuration>
-  		<source>1.5</source>
-  		<target>1.5</target>
-  	    </configuration>
-	</plugin>
+    	<!-- User Java 1.5 -->
+		<plugin>
+	  	    <groupId>org.apache.maven.plugins</groupId>
+	  	    <artifactId>maven-compiler-plugin</artifactId>
+	  	    <configuration>
+	  		<source>1.5</source>
+	  		<target>1.5</target>
+	  	    </configuration>
+		</plugin>
     </plugins>
   </build>
 </project>
