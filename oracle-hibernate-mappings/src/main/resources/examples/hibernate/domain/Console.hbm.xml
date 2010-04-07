@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="examples.hibernate.domain" default-lazy="false">
+	<class name="Console" table="CONSOLES">
+		<id name="id" column="ID" type="integer">
+			<generator class="sequence">
+				<param name="sequence">CONSOLE_ID_SEQ</param>
+			</generator>
+		</id>
+		<property name="name" column="NAME" type="string"/>
+		<property name="fullName" column="FULL_NAME" type="string"/>
+		<property name="description" column="DESCRIPTION" type="string"/>
+		<property name="price" column="PRICE" type="double"/>
+		<property name="maxPlayers" column="MAX_PLAYERS" type="integer"/>
+		<property name="wireless" column="WIRELESS" type="yes_no"/>
+		<property name="hasNetworkConnection" column="NETWORK" type="yes_no"/>
+		<property name="highDefinition" column="HD" type="yes_no"/>
+		<property name="media" column="MEDIA" type="string"/>
+	</class>
+</hibernate-mapping>

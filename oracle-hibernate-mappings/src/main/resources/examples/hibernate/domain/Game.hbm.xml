@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="examples.hibernate.domain" default-lazy="false">
+	<class name="Game" table="GAMES">
+		<id name="code" column="CODE" type="string"/>
+			
+		<property name="title" column="TITLE" unique="true" type="string"/>
+		<property name="description" column="DESCRIPTION" type="string"/>
+		<property name="media" column="MEDIA" type="string"/>
+		<property name="releasedYear" column="RELEASED_YEAR" type="integer"/>
+		<property name="price" column="PRICE" type="double"/>
+		<property name="playersNumber" column="PLAYERS_NUMBER" type="integer"/>
+		<property name="storageSpace" column="STORAGE_SPACE" type="string"/>
+		<property name="rate" column="RATE" type="character"/>
+		<property name="averageRaiting" column="AVERAGE_RATING" type="double"/>
+	</class>
+</hibernate-mapping>

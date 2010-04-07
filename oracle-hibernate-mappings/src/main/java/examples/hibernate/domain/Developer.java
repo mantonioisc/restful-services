@@ -5,6 +5,7 @@ public class Developer {
 	private String name;
 	private String country;
 	private String website;
+	
 	public String getName() {
 		return name;
 	}
@@ -22,6 +23,9 @@ public class Developer {
 	}
 	public void setWebsite(String website) {
 		this.website = website;
+	}
+	private void setId(int id){
+		this.id = id;
 	}
 	public int getId() {
 		return id;

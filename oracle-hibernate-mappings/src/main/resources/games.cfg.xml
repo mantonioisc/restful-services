@@ -21,10 +21,10 @@
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		
-		<!--<mapping resource="examples/hibernate/domain/Company.hbm.xml"/>
+		<mapping resource="examples/hibernate/domain/Company.hbm.xml"/>
 		<mapping resource="examples/hibernate/domain/Console.hbm.xml"/>
 		<mapping resource="examples/hibernate/domain/Developer.hbm.xml"/>
-		<mapping resource="examples/hibernate/domain/Game.hbm.xml"/>-->
+		<mapping resource="examples/hibernate/domain/Game.hbm.xml"/>
 		<mapping resource="examples/hibernate/domain/Tag.hbm.xml"/>
 		<mapping resource="examples/hibernate/domain/User.hbm.xml"/>
 	</session-factory>

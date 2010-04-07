@@ -73,6 +73,9 @@ public class Console {
 	public void setCompany(Company company) {
 		this.company = company;
 	}
+	private void setId(int id){
+		this.id = id;
+	}
 	public int getId() {
 		return id;
 	}

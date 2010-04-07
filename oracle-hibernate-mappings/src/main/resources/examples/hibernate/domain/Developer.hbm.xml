@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="examples.hibernate.domain" default-lazy="false">
+	<class name="Developer" table="DEVELOPERS">
+		<id column="ID" type="integer">
+			<generator class="sequence">
+				<param name="sequence">DEVELOPER_ID_SEQ</param>
+			</generator>
+		</id>
+		<property name="name" column="NAME" type="string"/>
+		<property name="country" column="COUNTRY" type="string"/>
+		<property name="website" column="URL" type="string"/>
+	</class>
+</hibernate-mapping>

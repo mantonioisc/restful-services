@@ -31,6 +31,9 @@ public class Company {
 	public void setWebSite(String webSite) {
 		this.webSite = webSite;
 	}
+	private void setId(int id){
+		this.id = id;
+	}
 	public int getId() {
 		return id;
 	}
