@@ -14,5 +14,15 @@
 		<property name="fullName" column="FULL_NAME" type="string"/>
 		<property name="country" column="COUNTRY" type="string"/>
 		<property name="webSite" column="URL" type="string"/>
+		<!-- Here a set makes sense since the number of consoles a company have
+			is not really big. So the performance penalty will be not great as
+			if we were mapping a set of games for each console for examples, or
+			a developer having a set of all it's games, that will be a huge 
+			collection to load into memory.
+		 -->
+		<set name="consoles">
+			<key column="COMPANY_ID"/><!-- use the column name on the other table -->
+			<one-to-many class="Console"/>
+		</set>
 	</class>
 </hibernate-mapping>

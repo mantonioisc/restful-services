@@ -1,11 +1,19 @@
 package examples.hibernate.domain;
 
+import java.util.Set;
+
 public class Company {
 	private int id;
 	private String name;
 	private String fullName;
 	private String country;
 	private String webSite;
+	/**
+	 * It may be convenient for a company object to have a set of consoles
+	 * since they aren't many, each company has just a few. We can not say
+	 * the same about a console having a set of all its games.
+	 */
+	private Set<Console> consoles;
 	
 	public String getName() {
 		return name;
@@ -37,6 +45,13 @@ public class Company {
 	public int getId() {
 		return id;
 	}
+	public Set<Console> getConsoles() {
+		return consoles;
+	}
+	public void setConsoles(Set<Console> consoles) {
+		this.consoles = consoles;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

@@ -14,6 +14,12 @@ public class CompanyMappingTest extends BaseMappingTest {
 		List<Company> companies = session.createQuery("from Company").list();
 		for(Company company:companies){
 			System.out.println(company);
+			if(company.getConsoles()!=null){
+				for(Console console:company.getConsoles()){
+					System.out.print("\t");
+					System.out.println(console);
+				}
+			}
 		}
 		
 		transaction.commit();

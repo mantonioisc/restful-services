@@ -1,5 +1,7 @@
 package examples.hibernate.domain;
 
+import java.util.Set;
+
 public class Game {
 	/**
 	 * This will be the key, is a natural key
@@ -16,6 +18,8 @@ public class Game {
 	private char rate;
 	private double averageRaiting;
 	private Developer developer;
+	private Set<Console> consoles;
+	private Set<Tag> tags;
 	
 	public String getCode() {
 		return code;
@@ -83,6 +87,19 @@ public class Game {
 	public void setDeveloper(Developer developer) {
 		this.developer = developer;
 	}
+	public Set<Console> getConsoles() {
+		return consoles;
+	}
+	public void setConsoles(Set<Console> consoles) {
+		this.consoles = consoles;
+	}
+	public Set<Tag> getTags() {
+		return tags;
+	}
+	public void setTags(Set<Tag> tags) {
+		this.tags = tags;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

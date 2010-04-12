@@ -15,5 +15,21 @@
 		<property name="storageSpace" column="STORAGE_SPACE" type="string"/>
 		<property name="rate" column="RATE" type="character"/>
 		<property name="averageRaiting" column="AVERAGE_RATING" type="double"/>
+		<many-to-one name="developer" column="DEVELOPER_ID" class="Developer"/>
+		<!-- A game can be in one or two consoles, so it wouldn't cost much to
+			load this into memory, but not the opposite since a console can
+			have a big number of games
+		 -->
+		<set name="consoles" table="GAMES_CONSOLES">
+			<key column="GAME_CODE"/>
+			<many-to-many class="Console" column="CONSOLE_ID"/>
+		</set>
+		<!-- A game should now its tags, but a Tag shouldn't know to how many
+			games has been applied, may be a lot 
+		-->
+		<set name="tags" table="GAMES_TAGS">
+			<key column="GAME_CODE"/>
+			<many-to-many class="Tag" column="TAG_ID"/>
+		</set>
 	</class>
 </hibernate-mapping>

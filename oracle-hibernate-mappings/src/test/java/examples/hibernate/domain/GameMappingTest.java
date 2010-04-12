@@ -14,6 +14,18 @@ public class GameMappingTest extends BaseMappingTest {
 		List<Game> games = session.createQuery("from Game").list();
 		for(Game game:games){
 			System.out.println(game);
+			if(game.getConsoles()!=null){
+				for(Console console:game.getConsoles()){
+					System.out.print("\t");
+					System.out.println(console);
+				}
+			}
+			if(game.getTags()!=null){
+				for(Tag tag:game.getTags()){
+					System.out.print("\t");
+					System.out.println(tag);	
+				}
+			}
 		}
 		
 		transaction.commit();

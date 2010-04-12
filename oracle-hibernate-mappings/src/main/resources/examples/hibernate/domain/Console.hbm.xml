@@ -19,5 +19,6 @@
 		<property name="hasNetworkConnection" column="NETWORK" type="yes_no"/>
 		<property name="highDefinition" column="HD" type="yes_no"/>
 		<property name="media" column="MEDIA" type="string"/>
+		<many-to-one name="company" column="COMPANY_ID" class="Company"></many-to-one>
 	</class>
 </hibernate-mapping>
