@@ -17,6 +17,8 @@ INSERT INTO DEVELOPERS VALUES(DEVELOPER_ID_SEQ.nextval, 'KONAMI', 'Japan', 'http
 INSERT INTO GAMES VALUES('BLUS30109', 'Metal Gear Solid 4','Lead legendary hero Solid Snake in this final chapter of the Metal Gear Solid saga', 'BluRay', 2008, 849.00, 1, '4600 MB', 'M', 94, DEVELOPER_ID_SEQ.currval);
 INSERT INTO DEVELOPERS VALUES(DEVELOPER_ID_SEQ.nextval, 'Sony Santa Monica Studio', 'United States', 'http://www.worldwidestudios.net/santamonica');
 INSERT INTO GAMES VALUES('BCUS98111', 'God  Of War III','In the end, there will be only chaos', 'BluRay', 2010, 989.00, 1, '5 MB', 'M', 93, DEVELOPER_ID_SEQ.currval);
+INSERT INTO USERS_GAMES VALUES(USER_ID_SEQ.currval, 'BLUS30109', '01-JUN-08', 'NEW', 'OPENED', 'N');
+INSERT INTO USERS_GAMES VALUES(USER_ID_SEQ.currval, 'BCUS98111', '19-MAR-10', 'NEW', 'OPENED', 'N');
 
 INSERT INTO TAGS VALUES(TAG_ID_SEQ.nextval, 'exclusive');
 INSERT INTO GAMES_TAGS(GAME_CODE, TAG_ID) VALUES ('BLUS30109', TAG_ID_SEQ.currval);
