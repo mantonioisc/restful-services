@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="examples.hibernate.domain.join" default-lazy="false">
+	<class name="UserConsole" table="USERS_CONSOLES">
+		<composite-id class="UserConsole$Id">
+			<key-property name="userId" column="USER_ID" access="field"/>
+			<key-property name="consoleId" column="CONSOLE_ID" access="field"/>
+		</composite-id>
+		
+		<many-to-one name="user" column="USER_ID" 
+			class="examples.hibernate.domain.User" insert="false" update="false"/>
+		<many-to-one name="console" column="CONSOLE_ID"
+			class="examples.hibernate.domain.Console" insert="false" update="false"/>
+			
+		<!-- join table columns -->
+		<property name="acquiredDate" column="ACQUIRED_DATE" type="date"/>
+		<property name="acquiredCondition" column="ACQUIRED_CONDITION" type="string"/>
+	</class>
+</hibernate-mapping>

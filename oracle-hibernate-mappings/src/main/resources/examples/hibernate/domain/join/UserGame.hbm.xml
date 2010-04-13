@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="examples.hibernate.domain.join" 
+	default-lazy="false">
+	<class name="UserGame" table="USERS_GAMES">
+		<composite-id name="id" class="UserGame$Id">
+			<key-property name="userId" column="USER_ID" access="field"/>
+			<key-property name="gameCode" column="GAME_CODE" access="field"/>
+		</composite-id>
+		
+		<!-- links to entities -->
+		<many-to-one name="user" class="examples.hibernate.domain.User" column="USER_ID" 
+			insert="false" update="false"/>
+		<many-to-one name="game" class="examples.hibernate.domain.Game" column="GAME_CODE"
+			insert="false" update="false"/>
+		
+		<!-- join table columns -->
+		<property name="acquiredDate" column="ACQUIRED_DATE" type="date"/>
+		<property name="acquiredCondition" column="ACQUIRED_CONDITION" type="string"/>
+		<property name="currentCondition" column="CURRENT_CONDITION" type="string"/>
+		<property name="greatestHits" column="GREATEST_HITS" type="yes_no"/>
+		
+	</class>
+</hibernate-mapping>
