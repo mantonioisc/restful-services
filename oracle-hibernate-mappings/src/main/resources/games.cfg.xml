@@ -16,6 +16,7 @@
 		<!-- misc -->
 		<property name="hibernate.connection.pool_size">2</property>
 		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<property name="hibernate.current_session_context_class">thread</property>
 		
 		<!-- show sql -->
 		<property name="show_sql">true</property>
