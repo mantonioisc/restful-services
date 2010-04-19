@@ -8,7 +8,7 @@ import org.junit.BeforeClass;
 
 import examples.hibernate.util.HibernateUtil;
 
-public class BaseDaoTest {
+public abstract class BaseDaoTest {
 	protected SessionFactory sf;
 
 	@BeforeClass
