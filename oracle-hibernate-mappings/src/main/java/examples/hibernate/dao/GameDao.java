@@ -11,4 +11,5 @@ public interface GameDao {
 	public List<Game> getGames();
 	public List<Game> getGamesByDeveloper(int developerId);
 	public List<Game> getGamesByConsole(int consoleId);
+	public List<Game> getGamesByTags(List<String> tags);
 }
