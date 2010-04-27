@@ -2,10 +2,24 @@ package examples.hibernate.domain;
 
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace = "http://examples.domain")
+@XmlRootElement(name = "User", namespace = "http://examples.domain")
 public class User {
+	@XmlAttribute(required=true)
 	private int id;
+	@XmlElement(required = true, nillable = false)
 	private String name;
+	@XmlElement(required = false, nillable = true)
 	private String lastName;
+	@XmlElement(required = false, nillable = true)
 	private Date birthDate;
 	
 	public String getName() {

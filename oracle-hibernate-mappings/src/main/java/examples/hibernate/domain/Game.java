@@ -2,23 +2,46 @@ package examples.hibernate.domain;
 
 import java.util.Set;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace = "http://domain.examples")
+@XmlRootElement(name = "Game", namespace = "http://domain.examples")
 public class Game {
 	/**
 	 * This will be the key, is a natural key
 	 * composed of 4 letters, and 5 digits
 	 */
+	@XmlAttribute(required = true)
 	private String code;
+	@XmlElement(required = true, nillable = false)
 	private String title;
+	@XmlElement(required = false)
 	private String description;
+	@XmlElement(required = false)
 	private String media;
+	@XmlElement(required = false)
 	private int releasedYear;
+	@XmlElement(required = false)
 	private double price;
+	@XmlElement(required = false)
 	private int playersNumber;
+	@XmlElement(required = false)
 	private String storageSpace;
+	@XmlElement(required = false)
 	private char rate;
+	@XmlElement(required = false)
 	private double averageRaiting;
+	@XmlElement(required = false)
 	private Developer developer;
+	@XmlElement(required = false)
 	private Set<Console> consoles;
+	@XmlElement(required = false)
 	private Set<Tag> tags;
 	
 	public String getCode() {

@@ -1,16 +1,37 @@
 package examples.hibernate.domain;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace = "http://domain.examples")
+@XmlRootElement(name = "Console", namespace = "http://domain.examples")
 public class Console {
+	@XmlAttribute(required = true)
 	private int id;
+	@XmlElement(required = true)
 	private String name;
+	@XmlElement(required = false)
 	private String fullName;
+	@XmlElement(required = false)
 	private String description;
+	@XmlElement(required = false)
 	private double price;
+	@XmlElement(required = false)
 	private int maxPlayers;
+	@XmlElement(required = false)
 	private boolean isWireless;
+	@XmlElement(required = false)
 	private boolean hasNetworkConnection;
+	@XmlElement(required = false)
 	private boolean isHighDefinition;
+	@XmlElement(required = false)
 	private String media;
+	@XmlElement(required = false)
 	private Company company;
 	
 	public String getName() {

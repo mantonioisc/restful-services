@@ -2,17 +2,33 @@ package examples.hibernate.domain;
 
 import java.util.Set;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace = "http://domain.examples")
+@XmlRootElement(name = "Company", namespace = "http://domain.examples")
 public class Company {
+	@XmlAttribute(required=true)
 	private int id;
+	@XmlElement(required=true)
 	private String name;
+	@XmlElement(required=false)
 	private String fullName;
+	@XmlElement(required=false)
 	private String country;
+	@XmlElement(required=false)
 	private String webSite;
 	/**
 	 * It may be convenient for a company object to have a set of consoles
 	 * since they aren't many, each company has just a few. We can not say
 	 * the same about a console having a set of all its games.
 	 */
+	@XmlElement(required = false)
 	private Set<Console> consoles;
 	
 	public String getName() {
