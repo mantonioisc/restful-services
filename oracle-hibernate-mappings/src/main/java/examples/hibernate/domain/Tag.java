@@ -8,8 +8,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(namespace="http://examples.domain")
-@XmlRootElement(name="Tag", namespace="http://examples.domain")
+@XmlType(namespace="http://domain.examples")
+@XmlRootElement(name="Tag", namespace="http://domain.examples")
 public class Tag {
 	@XmlAttribute(required=true)
 	private int id;

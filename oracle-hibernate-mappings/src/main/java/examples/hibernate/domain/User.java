@@ -10,8 +10,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(namespace = "http://examples.domain")
-@XmlRootElement(name = "User", namespace = "http://examples.domain")
+@XmlType(namespace = "http://domain.examples")
+@XmlRootElement(name = "User", namespace = "http://domain.examples")
 public class User {
 	@XmlAttribute(required=true)
 	private int id;

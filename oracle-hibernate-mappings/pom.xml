@@ -4,7 +4,7 @@
   <groupId>examples</groupId>
   <artifactId>oracle-hibernate-mappings</artifactId>
   <packaging>jar</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0</version>
   <name>A games database using oracle and accessed using hibernate</name>
   <url>http://maven.apache.org</url>
   
