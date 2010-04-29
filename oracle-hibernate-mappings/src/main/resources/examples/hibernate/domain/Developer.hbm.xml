@@ -5,7 +5,7 @@
 
 <hibernate-mapping package="examples.hibernate.domain" default-lazy="false">
 	<class name="Developer" table="DEVELOPERS">
-		<id column="ID" type="integer">
+		<id name="id" column="ID" type="integer">
 			<generator class="sequence">
 				<param name="sequence">DEVELOPER_ID_SEQ</param>
 			</generator>

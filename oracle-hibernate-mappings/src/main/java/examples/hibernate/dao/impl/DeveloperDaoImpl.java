@@ -41,7 +41,7 @@ public class DeveloperDaoImpl implements DeveloperDao {
 		List<Developer> developers = Collections.emptyList();
 		try{
 			session.beginTransaction();
-			developers = session.createQuery("from Developers").list();
+			developers = session.createQuery("from Developer").list();
 			session.getTransaction().commit();
 		}catch(Exception e){
 			session.getTransaction().rollback();
