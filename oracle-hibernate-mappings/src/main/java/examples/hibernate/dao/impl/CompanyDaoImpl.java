@@ -31,6 +31,7 @@ public class CompanyDaoImpl implements CompanyDao {
 		try{
 			session.beginTransaction();
 			companies = session.createQuery("from Company").list();
+			session.getTransaction().commit();
 		}catch(Exception e){
 			session.getTransaction().rollback();
 		}

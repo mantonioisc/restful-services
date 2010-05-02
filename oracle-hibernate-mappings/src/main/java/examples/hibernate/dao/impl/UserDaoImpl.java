@@ -33,6 +33,7 @@ public class UserDaoImpl implements UserDao {
 			session.beginTransaction();
 			User user = (User)session.get(User.class, id);
 			session.delete(user);
+			session.getTransaction().commit();
 		}catch(Exception e){
 			session.getTransaction().rollback();
 		}
@@ -43,7 +44,8 @@ public class UserDaoImpl implements UserDao {
 		User user = null;
 		try{
 			session.beginTransaction();
-			session.get(User.class, id);
+			user = (User)session.get(User.class, id);
+			session.getTransaction().commit();
 		}catch(Exception e){
 			session.getTransaction().rollback();
 		}

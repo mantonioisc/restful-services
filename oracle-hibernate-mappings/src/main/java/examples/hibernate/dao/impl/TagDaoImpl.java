@@ -50,6 +50,21 @@ public class TagDaoImpl implements TagDao {
 		}
 		return tag;
 	}
+	
+	public Tag getTag(String name) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		Transaction transaction = null;
+		Tag tag = null;
+		try{
+			transaction = session.beginTransaction();
+			tag = 
+				(Tag)session.createQuery("from Tag t where t.name = :name").setString("name", name).uniqueResult();
+			transaction.commit();
+		}catch(Exception e){
+			transaction.rollback();
+		}
+		return tag;
+	}
 
 	@SuppressWarnings("unchecked")
 	public List<Tag> getTags() {
