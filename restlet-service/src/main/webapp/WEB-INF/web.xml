@@ -1,0 +1,22 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
+  <display-name>Restlet service</display-name>
+  
+  <context-param>
+  	<param-name>org.restlet.application</param-name>
+  	<param-value>examples.restlet.application.RestfulGameService</param-value>
+  </context-param>
+  
+  <servlet>
+  	<servlet-name>restlet-servlet</servlet-name>
+  	<servlet-class>com.noelios.restlet.ext.servlet.ServerServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>restlet-servlet</servlet-name>
+  	<url-pattern>/*</url-pattern>
+  </servlet-mapping>
+</web-app>

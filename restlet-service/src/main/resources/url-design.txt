@@ -1,0 +1,28 @@
+/company GET, POST
+/company/{id} GET, PUT, DELETE
+/company/{id}/console/{consoleId} DELETE
+
+/console GET, POST
+/console/{id} GET, PUT, DELETE
+/console/company/{companyId} GET 
+/console/user/{userId} GET
+
+/developer GET, POST
+/developer/{id} GET, PUT, DELETE
+
+/game GET, POST
+/game/{code} GET, PUT
+/game/developer/{developerId} GET
+/game/console/{consoleId} GET
+/game/user/{userId} GET
+/game/tag/{tagName} GET
+/game/{code}/console/{consoleId} DELETE
+/game/{code}/tag/{tagName} DELETE
+
+/tag GET, POST
+/tag/{name} GET, PUT, DELETE
+
+/user GET, POST
+/user/{id} GET, PUT, DELETE
+/user/{id}/game/{code} DELETE
+/user/{id}/console/{consoleId} DELETE
