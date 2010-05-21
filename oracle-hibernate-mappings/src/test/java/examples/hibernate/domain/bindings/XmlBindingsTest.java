@@ -34,7 +34,7 @@ public class XmlBindingsTest {
 	
 	private static StringWriter writer;
 	
-	private static final Class[] classes = 
+	private static final Class<?>[] classes = 
 		{Company.class, Console.class, Developer.class, 
 			Game.class, Tag.class, User.class};
 	

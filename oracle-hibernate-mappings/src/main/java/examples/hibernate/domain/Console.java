@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(namespace = "http://domain.examples")
-@XmlRootElement(name = "Console", namespace = "http://domain.examples")
+@XmlRootElement(name = "console", namespace = "http://domain.examples")
 public class Console {
 	@XmlAttribute(required = true)
 	private int id;

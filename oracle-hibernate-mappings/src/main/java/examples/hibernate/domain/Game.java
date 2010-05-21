@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(namespace = "http://domain.examples")
-@XmlRootElement(name = "Game", namespace = "http://domain.examples")
+@XmlRootElement(name = "game", namespace = "http://domain.examples")
 public class Game {
 	/**
 	 * This will be the key, is a natural key
@@ -39,9 +39,9 @@ public class Game {
 	private double averageRaiting;
 	@XmlElement(required = false)
 	private Developer developer;
-	@XmlElement(required = false)
+	@XmlElement(name = "console", required = false)
 	private Set<Console> consoles;
-	@XmlElement(required = false)
+	@XmlElement(name = "tag", required = false)
 	private Set<Tag> tags;
 	
 	public String getCode() {

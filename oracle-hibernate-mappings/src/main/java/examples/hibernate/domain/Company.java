@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(namespace = "http://domain.examples")
-@XmlRootElement(name = "Company", namespace = "http://domain.examples")
+@XmlRootElement(name = "company", namespace = "http://domain.examples")
 public class Company {
 	@XmlAttribute(required=true)
 	private int id;
@@ -26,9 +26,11 @@ public class Company {
 	/**
 	 * It may be convenient for a company object to have a set of consoles
 	 * since they aren't many, each company has just a few. We can not say
-	 * the same about a console having a set of all its games.
+	 * the same about a console having a set of all its games. Changed name
+	 * to <code>console</code> to be consistent with {@link Company} when
+	 * serializing embed in this object.
 	 */
-	@XmlElement(required = false)
+	@XmlElement(name="console", required = false)
 	private Set<Console> consoles;
 	
 	public String getName() {
