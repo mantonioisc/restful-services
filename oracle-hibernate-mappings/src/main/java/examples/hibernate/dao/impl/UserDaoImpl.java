@@ -77,6 +77,7 @@ public class UserDaoImpl implements UserDao {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Console> getUserConsoles(int userId) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		List<Console> consoles = new ArrayList<Console>();

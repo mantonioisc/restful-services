@@ -1,16 +1,16 @@
 package examples.hibernate.dao;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+
 import java.util.List;
 
 import org.hibernate.Session;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import examples.hibernate.dao.impl.CompanyDaoImpl;
 import examples.hibernate.domain.Company;
-
-import static org.junit.Assert.*;
 
 public class CompanyDaoTest extends BaseDaoTest {
 	CompanyDao dao = new CompanyDaoImpl();

@@ -5,6 +5,7 @@ import java.util.List;
 import org.junit.Test;
 
 public class ConsoleMappingTest extends BaseMappingTest {
+	@SuppressWarnings("unchecked")
 	@Test
 	public void testConsoleMapping(){
 		session.beginTransaction();

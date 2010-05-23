@@ -38,6 +38,7 @@ public class Developer {
 	public void setWebsite(String website) {
 		this.website = website;
 	}
+	@SuppressWarnings("unused")
 	private void setId(int id){
 		this.id = id;
 	}

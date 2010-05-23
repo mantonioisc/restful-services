@@ -8,6 +8,7 @@ import org.junit.Test;
 import examples.hibernate.domain.BaseMappingTest;
 
 public class UserGameMappingTest extends BaseMappingTest {
+	@SuppressWarnings("unchecked")
 	@Test
 	public void testUserGameMapping(){
 		Transaction transaction = session.beginTransaction();

@@ -17,6 +17,7 @@ public class UserGame {
 	 * A class to map a composite key
 	 */
 	public static class Id implements Serializable{
+		private static final long serialVersionUID = -4756174184142299926L;
 		private int userId;
 		private String gameCode;
 		

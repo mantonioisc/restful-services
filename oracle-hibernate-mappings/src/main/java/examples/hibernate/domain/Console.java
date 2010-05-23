@@ -94,6 +94,7 @@ public class Console {
 	public void setCompany(Company company) {
 		this.company = company;
 	}
+	@SuppressWarnings("unused")
 	private void setId(int id){
 		this.id = id;
 	}

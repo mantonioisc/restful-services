@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<!-- Hibernate configuration -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<!-- Sample datasource configuration -->
+		<property name="driverClassName" value="${db.driver}"/>
+		<property name="url" value="${db.url}"/>
+		<property name="username" value="${db.user}"/>
+		<property name="password" value="${db.password}"/>
+		<property name="initialSize" value="2"/>
+		<property name="maxActive" value="2"/>
+		<property name="defaultAutoCommit" value="false"/>
+		<property name="validationQuery" value="SELECT sysdate FROM dual"/>
+		<property name="testOnBorrow" value="true"/>
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- Replaces the hibernate.cfg.xml -->
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mappingResources">
+			<list>
+				<value>examples/hibernate/domain/Company.hbm.xml</value>
+				<value>examples/hibernate/domain/Console.hbm.xml</value>
+				<value>examples/hibernate/domain/Developer.hbm.xml</value>
+				<value>examples/hibernate/domain/Game.hbm.xml</value>
+				<value>examples/hibernate/domain/Tag.hbm.xml</value>
+				<value>examples/hibernate/domain/User.hbm.xml</value>
+				<value>examples/hibernate/domain/join/UserGame.hbm.xml</value>
+				<value>examples/hibernate/domain/join/UserConsole.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="show_sql">true</prop>
+				<prop key="format_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- DAO configuration -->
+	<bean id="companyDao" class="examples.hibernate.dao.spring.impl.CompanyDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="consoleDao" class="examples.hibernate.dao.spring.impl.ConsoleDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="developerDao" class="examples.hibernate.dao.spring.impl.DeveloperDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>	
+	
+	<bean id="gameDao" class="examples.hibernate.dao.spring.impl.GameDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="tagDao" class="examples.hibernate.dao.spring.impl.TagDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="userDao" class="examples.hibernate.dao.spring.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+</beans>

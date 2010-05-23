@@ -6,7 +6,7 @@
 <hibernate-configuration>
 	<session-factory>
 		<!-- Connection properties -->
-		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.driver_class">${db.driver}</property>
 		<property name="hibernate.connection.url">${db.url}</property>
 		<property name="hibernate.connection.username">${db.user}</property>
 		<property name="hibernate.connection.password">${db.password}</property>
@@ -22,7 +22,7 @@
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		
-		<!-- Mappin files -->
+		<!-- Mapping files -->
 		<mapping resource="examples/hibernate/domain/Company.hbm.xml"/>
 		<mapping resource="examples/hibernate/domain/Console.hbm.xml"/>
 		<mapping resource="examples/hibernate/domain/Developer.hbm.xml"/>

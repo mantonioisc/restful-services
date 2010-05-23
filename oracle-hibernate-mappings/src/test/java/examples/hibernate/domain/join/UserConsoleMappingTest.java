@@ -8,6 +8,7 @@ import org.junit.Test;
 import examples.hibernate.domain.BaseMappingTest;
 
 public class UserConsoleMappingTest extends BaseMappingTest {
+	@SuppressWarnings("unchecked")
 	@Test
 	public void testUserConsoleMapping(){
 		Transaction transaction = session.beginTransaction();

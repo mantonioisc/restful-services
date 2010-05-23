@@ -6,6 +6,7 @@ import org.hibernate.Transaction;
 import org.junit.Test;
 
 public class TagMappingTest extends BaseMappingTest {
+	@SuppressWarnings("unchecked")
 	@Test
 	public void testTagMapping(){
 		Transaction transaction = session.beginTransaction();

@@ -11,6 +11,7 @@ public class UserConsole {
 	 * The composite id class must implement {@link Serializable}
 	 */
 	public static class Id implements Serializable{
+		private static final long serialVersionUID = 6957111246277664938L;
 		private int userId;
 		private int consoleId;
 		
