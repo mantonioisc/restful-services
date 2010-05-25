@@ -1,0 +1,52 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
+	<display-name>
+		JAX-RS application using JBoss RESTEasy implementation
+	</display-name>
+	
+	<!-- Strategy 1. To run inside a war and have RESTeasy find resources -->
+	<context-param>
+		<param-name>resteasy.scan.resources</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<!-- Strategy 2. When running exploded specify each resource manually -->
+	<context-param>
+		<param-name>resteasy.resources</param-name>
+		<param-value>
+			examples.jaxrs.resource.CompanyResource,
+			examples.jaxrs.resource.ConsoleResource
+		</param-value>
+	</context-param>
+
+	<listener>
+		<!-- For early bootstrap when running in war -->
+		<listener-class>
+			org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap
+		</listener-class>
+	</listener>
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:examples/hibernate/dao/spring/applicationContext.xml</param-value>
+	</context-param>
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>resteasy-servlet</servlet-name>
+		<servlet-class>
+			org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>resteasy-servlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+
+</web-app>
