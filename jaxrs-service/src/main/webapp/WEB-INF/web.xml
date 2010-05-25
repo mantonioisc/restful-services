@@ -18,8 +18,10 @@
 		<param-value>
 			examples.jaxrs.resource.CompanyResource,
 			examples.jaxrs.resource.ConsoleResource,
+			examples.jaxrs.resource.DeveloperResource,
 			examples.jaxrs.resource.GameResource,
-			examples.jaxrs.resource.TagResource
+			examples.jaxrs.resource.TagResource,
+			examples.jaxrs.resource.UserResource
 		</param-value>
 	</context-param>
 
@@ -34,7 +36,6 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			classpath:examples/hibernate/dao/spring/applicationContext.xml
-			classpath:conf/applicationContext.xml
 		</param-value>
 	</context-param>
 	
