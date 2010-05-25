@@ -17,7 +17,9 @@
 		<param-name>resteasy.resources</param-name>
 		<param-value>
 			examples.jaxrs.resource.CompanyResource,
-			examples.jaxrs.resource.ConsoleResource
+			examples.jaxrs.resource.ConsoleResource,
+			examples.jaxrs.resource.GameResource,
+			examples.jaxrs.resource.TagResource
 		</param-value>
 	</context-param>
 
@@ -30,7 +32,10 @@
 	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:examples/hibernate/dao/spring/applicationContext.xml</param-value>
+		<param-value>
+			classpath:examples/hibernate/dao/spring/applicationContext.xml
+			classpath:conf/applicationContext.xml
+		</param-value>
 	</context-param>
 	
 	<listener>
