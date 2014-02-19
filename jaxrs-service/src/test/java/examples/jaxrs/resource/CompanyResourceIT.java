@@ -12,9 +12,9 @@ import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 
-public class CompanyResourceTest {
-	private String url = "http://localhost:8080/rest/company";
-	private static final Logger logger = Logger.getLogger(CompanyResourceTest.class);
+public class CompanyResourceIT {
+	private String url = "http://localhost:9090/rest/company";
+	private static final Logger logger = Logger.getLogger(CompanyResourceIT.class);
 
 	@Before
 	public void setUp() throws Exception {
@@ -22,7 +22,7 @@ public class CompanyResourceTest {
 	}
 	
 	@Test
-	public void testGetCompaniesAsJSON() throws HttpException, IOException{
+	public void testGetCompanies() throws IOException{
 		HttpClient httpClient = new HttpClient();
 		GetMethod get = new GetMethod(url);
 		get.setRequestHeader("Accepts", "application/json");
@@ -33,7 +33,7 @@ public class CompanyResourceTest {
 	}
 	
 	@Test
-	public void testGetCompanyAsJSON() throws HttpException, IOException{
+	public void testGetCompany() throws IOException {
 		HttpClient httpClient = new HttpClient();
 		GetMethod get = new GetMethod(url+ "/1");
 		get.setRequestHeader("Accepts", "application/json");
